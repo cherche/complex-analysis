@@ -1,25 +1,41 @@
 \documentclass{beamer}
 
-\usetheme{Warsaw}
+\usetheme[progressbar=frametitle]{metropolis}
+\setbeamertemplate{frame numbering}[fraction]
+\useoutertheme{metropolis}
+\useinnertheme{metropolis}
+\usefonttheme{metropolis}
+%\setbeamercolor{background canvas}{bg=white}
+
 \definecolor{mygreen}{rgb}{.125,.5,.25}
 \definecolor{bittersweet}{rgb}{1.0, 0.44, 0.37}
 \definecolor{amethyst}{rgb}{0.6, 0.4, 0.8}
-\usecolortheme[named=mygreen]{structure}
+%\usecolortheme[named=mygreen]{structure}
+
+\usecolortheme{spruce}
 
 \title[Complex analysis]{Topics in complex analysis}
 \subtitle{The fundamental theorem of algebra}
 \author{Ryan Nguyen}
-\institute{institute}
+\institute{}
 \date{}
 
 \begin{document}
+\metroset{block=fill}
 
 \begin{frame}
 \titlepage
 \end{frame}
 
-\begin{frame}{Slide title}
-hello
+\begin{frame}[t]{TITLE} \vspace{4pt}
+\begin{block}{Extra}
+Here is some text
+\end{block}
+
+\end{frame}
+
+\begin{frame}[t]{TITLE} \vspace{4pt}
+contents
 \end{frame}
 
 \end{document}
