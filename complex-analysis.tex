@@ -1,7 +1,10 @@
 \documentclass{beamer}
 
+\usepackage{multicol}
+
 \usetheme[progressbar=frametitle]{metropolis}
 \setbeamertemplate{frame numbering}[fraction]
+\usefonttheme{serif}
 \useoutertheme{metropolis}
 \useinnertheme{metropolis}
 \usefonttheme{metropolis}
@@ -29,13 +32,55 @@
 
 \begin{frame}[t]{TITLE} \vspace{4pt}
 \begin{block}{Extra}
-Here is some text
+Here is some text \only<2>{(and some extra, just for this slide)}
 \end{block}
+
+\vspace{10pt}
+
+\begin{columns}[onlytextwidth,t]
+%set to 0.45 to have a little smargin in the middle
+\onslide<3->{
+\column{0.45\textwidth}
+This is the left column. The text here goes on and on for a while. Hopefully readers don't get too bored.}
+\onslide<4->{
+\column{0.45\textwidth}
+Maybe this right column will break the monotony.
+}
+\end{columns}
 
 \end{frame}
 
-\begin{frame}[t]{TITLE} \vspace{4pt}
-contents
+\begin{frame}[t]{Some holomorphic functions} \vspace{4pt}
+\begin{enumerate}
+\begin{multicols}{3}
+\item \(z\)
+\item \(z^2 - 4\)
+\item \(\cos(z)\)
+\item \(\sin(z)\)
+\item \(\tan(z)\)
+\item \(e^z\)
+\item \(\frac{1}{z^2 + 1}\)
+\item \(z\)
+\item \(z^2 - 4\)
+\item \(\cos(z)\)
+\item \(\sin(z)\)
+\item \(\tan(z)\)
+\item \(e^z\)
+\item \(\frac{1}{z^2 + 1}\)
+\item \(z\)
+\item \(z^2 - 4\)
+\item \(\cos(z)\)
+\item \(\sin(z)\)
+\item \(\tan(z)\)
+\item \(e^z\)
+\item \(\frac{1}{z^2 + 1}\)
+\end{multicols}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[standout]
+\flushleft
+Conclusion
 \end{frame}
 
 \end{document}
