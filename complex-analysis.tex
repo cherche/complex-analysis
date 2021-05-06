@@ -1,4 +1,5 @@
 \documentclass{beamer}
+\usepackage[utf8]{inputenc} % inputenc for encoding to utf8
 
 \usepackage{multicol}
 
@@ -18,7 +19,7 @@
 \usecolortheme{spruce}
 
 \title[Complex analysis]{Topics in complex analysis}
-\subtitle{The fundamental theorem of algebra}
+\subtitle{FTA and M\"{o}bius transformations}
 \author{Ryan Nguyen}
 \institute{}
 \date{}
@@ -30,51 +31,52 @@
 \titlepage
 \end{frame}
 
-\begin{frame}[t]{TITLE} \vspace{4pt}
-\begin{block}{Extra}
-Here is some text \only<2>{(and some extra, just for this slide)}
-\end{block}
-
-\vspace{10pt}
-
-\begin{columns}[onlytextwidth,t]
-%set to 0.45 to have a little smargin in the middle
-\onslide<3->{
-\column{0.45\textwidth}
-This is the left column. The text here goes on and on for a while. Hopefully readers don't get too bored.}
-\onslide<4->{
-\column{0.45\textwidth}
-Maybe this right column will break the monotony.
-}
-\end{columns}
-
+\begin{frame}[t]{Complex analysis?} \vspace{4pt}
+\textbf{complex analysis}: an extension of real analysis to calculus with complex variables
+\begin{itemize}
+	\item define differentiation by the difference quotient
+	\item define integration by the Riemann sum
+\end{itemize}
+\textbf{holomorphic}: complex differentiable.
+\begin{itemize}
+	\item infinitely complex differentiable!
+	\item analytic (partially follows from former point)
+\end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Some holomorphic functions} \vspace{4pt}
+\begin{frame}[t]{Some results} \vspace{4pt}
+\begin{block}{Cauchy's integral formula}
+Let \(U\) be an open subset of the complex numbers. If \(f: \mathbf{C} \rightarrow \mathbf{C}\) is holomorphic on \(U\), then we have
+\begin{equation*}
+f(a) = \frac{1}{2\pi i} \oint \frac{f(z)}{z-a} dz,
+\end{equation*}
+integrating in a counter-clockwise loop around \(a \in U\), and similarly for higher order derivatives.
+\end{block}
+A corollary involving the \(1\)st derivative is Liouville's theorem.
+\begin{block}{Liouville's theorem}
+Let \(f: \mathbf{C} \rightarrow \mathbf{C}\) be an entire function, i.e., holomorphic on the entire complex plane, and bounded. Then \(f\) is constant.
+\end{block}
+\end{frame}
+
+\begin{frame}[t]{Fundamental theorem of algebra (Liouville)} \vspace{4pt}
+\textit{Idea.} Using Liouville's theorem, force a contradiction. Let \(p\) be a non-constant polynomial with complex coefficients.
 \begin{enumerate}
-\begin{multicols}{3}
-\item \(z\)
-\item \(z^2 - 4\)
-\item \(\cos(z)\)
-\item \(\sin(z)\)
-\item \(\tan(z)\)
-\item \(e^z\)
-\item \(\frac{1}{z^2 + 1}\)
-\item \(z\)
-\item \(z^2 - 4\)
-\item \(\cos(z)\)
-\item \(\sin(z)\)
-\item \(\tan(z)\)
-\item \(e^z\)
-\item \(\frac{1}{z^2 + 1}\)
-\item \(z\)
-\item \(z^2 - 4\)
-\item \(\cos(z)\)
-\item \(\sin(z)\)
-\item \(\tan(z)\)
-\item \(e^z\)
-\item \(\frac{1}{z^2 + 1}\)
-\end{multicols}
+	\item Suppose no zeros. Define \(f(z) = \frac{1}{p(z)}\).
+	\item Notice that \(f\) is entire.
+	\item Notice that \(f\) is bounded.
+	\item Then by Liouville \(f\) must then be constant, implying that \(p\) is constant---a contradiction.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t]{Fundamental theorem of algebra (Picard)} \vspace{4pt}
+\begin{block}{Picard's little theorem}
+A non-constant entire function omits at most two points from its range.
+\end{block}
+\textit{Idea.} Force a contradiction by explicitly constructing the root.
+\begin{enumerate}
+	\item Suppose \(p\) has no roots, i.e., it excludes \(0\) from its range. Then its range must be exactly \(\mathbf{C} \setminus \{0\}\).
+	\item Then \(p(\mathbf{C})\) contains \(1/2, 1/3, 1/4,\) etc., points nearer and nearer \(0\).
+	\item Pull corresponding points in the domain to construct a sequence converging to a root.
 \end{enumerate}
 \end{frame}
 
