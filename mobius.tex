@@ -1,0 +1,29 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{amsmath}
+
+\begin{document}
+\begin{tikzpicture}
+% axes
+\draw[->] (-2,0) -- (3,0) node[anchor=south] {$\operatorname{Re}$};
+\draw[->] (0,-2) -- (0,3) node[anchor=west] {$\operatorname{Im}$};
+% line to line
+\fill[blue] (0,0) circle (1pt) node[anchor=south east] {$\phi(0) = \infty$};
+\draw[blue,<->] (-1.5,-1.5) -- (2.5,2.5);
+% line to circle
+\draw[red,<->] (1,-2) -- (1,3);
+
+\begin{scope}[shift={(6,0)}]
+	% axes
+	\draw[->] (-2,0) -- (3,0) node[anchor=south] {$\operatorname{Re}$};
+	\draw[->] (0,-2) -- (0,3) node[anchor=west] {$\operatorname{Im}$};
+	% circle to line
+	\fill[blue] (0,0) circle (1pt) node[anchor=south east] {$\phi(0) = \infty$};
+	\draw[blue] (0.25,0) circle (0.25cm);
+	% circle to circle, two examples
+	\draw[red] (0,0.25) circle (0.5cm);
+	\draw[red] (2,1) circle (0.75cm);
+\end{scope}
+\end{tikzpicture}
+\end{document}
