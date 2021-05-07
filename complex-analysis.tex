@@ -1,6 +1,10 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc} % inputenc for encoding to utf8
 
+\usepackage{standalone}
+\usepackage{tikz}
+\usepackage{xcolor}
+
 \usepackage{multicol}
 \usepackage{amsmath}
 
@@ -72,8 +76,13 @@ Every polynomial of degree at least \(1\) has a zero.
 \end{enumerate}
 \end{frame}
 
-\begin{frame}[t]{Fundamental theorem of algebra (Liouville)} \vspace{4pt}
-(some illustration of boundedness of \(f\))
+\begin{frame}[b]{Fundamental theorem of algebra (Liouville)}
+\begin{figure}
+  \includestandalone[width=\textwidth]{boundedness}%     without .tex extension
+  % or use \input{mytikz}
+  \caption{Demonstration of boundedness of \(f(z) := \frac{1}{p(z)}\)}
+  \label{fig:boundedness}
+\end{figure}
 \end{frame}
 
 \begin{frame}[t]{Fundamental theorem of algebra (Picard)} \vspace{4pt}
